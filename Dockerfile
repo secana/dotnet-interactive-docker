@@ -26,4 +26,4 @@ RUN dotnet interactive jupyter install
 
 # Run Jupyter Notebook
 EXPOSE 8888
-ENTRYPOINT ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+ENTRYPOINT ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0"]
