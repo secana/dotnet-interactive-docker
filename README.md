@@ -9,13 +9,13 @@ This repository contains a Dockerfile to allow users to run a *Jupyter* instance
 **Windows**:
 
 ```powershell
-docker run -it --rm -p 8888:8888 -v ${PWD}:/home/anaconda/local dotnet-interactive
+docker run -it --rm -p 8888:8888 -v ${PWD}:/home/anaconda/local secana/dotnet-interactive:latest
 ```
 
 **Linux**:
 
 ```bash
-docker run -it --rm -p 8888:8888 -v $pwd:/home/anaconda/local dotnet-interactive
+docker run -it --rm -p 8888:8888 -v $pwd:/home/anaconda/local secana/dotnet-interactive:latest
 ```
 
 This mounts your current working directory to the *local* folder in the *Jupyter* instance. The output will look like below. To open the notebook, click on the link in the last line.
