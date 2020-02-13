@@ -1,0 +1,29 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+
+RUN apt install -y --no-install-recommends wget && \
+    apt autoremove -y && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set non-root user
+RUN useradd -ms /bin/bash anaconda
+USER anaconda 
+ENV HOME="/home/anaconda"
+WORKDIR $HOME
+
+# Install Anaconda
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O anaconda.sh
+RUN chmod +x anaconda.sh
+RUN ./anaconda.sh -b -p $HOME/anaconda
+RUN rm ./anaconda.sh
+ENV PATH="/${HOME}/anaconda/bin:${PATH}"
+
+# Install .NET kernel
+RUN dotnet tool install -g --add-source "https://dotnet.myget.org/F/dotnet-try/api/v3/index.json" Microsoft.dotnet-interactive
+ENV PATH="/${HOME}/.dotnet/tools:${PATH}"
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
+RUN dotnet interactive jupyter install
+
+# Run Jupyter Notebook
+EXPOSE 8888
+ENTRYPOINT ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
