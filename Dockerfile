@@ -6,9 +6,10 @@ RUN apt install -y --no-install-recommends wget && \
     rm -rf /var/lib/apt/lists/*
 
 # Set non-root user
-RUN useradd -ms /bin/bash anaconda
-USER anaconda 
-ENV HOME="/home/anaconda"
+ENV USER="user"
+RUN useradd -ms /bin/bash $USER
+USER $USER 
+ENV HOME="/home/$USER"
 WORKDIR $HOME
 
 # Install Anaconda
