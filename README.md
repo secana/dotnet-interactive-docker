@@ -47,5 +47,6 @@ An image is build locally with the name *jupyter*.
 docker login
 docker tag jupyter secana/dotnet-interactive
 docker tag jupyter secana/dotnet-interactive:latest
+docker tag jupyter secana/dotnet-interactive:latest
 docker push secana/dotnet-interactive:latest
 ```
