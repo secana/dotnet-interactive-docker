@@ -13,7 +13,7 @@ ENV HOME="/home/$USER"
 WORKDIR $HOME
 
 # Install Anaconda
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O anaconda.sh
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh -O anaconda.sh
 RUN chmod +x anaconda.sh
 RUN ./anaconda.sh -b -p $HOME/anaconda
 RUN rm ./anaconda.sh
