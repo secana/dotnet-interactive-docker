@@ -2,7 +2,7 @@
 
 [.NET Interactive](https://github.com/dotnet/interactive) allows the execution of .NET (C#, F#, PowerShell) in a [Jupyter Notebook](https://jupyter.org/).
 
-This repository contains a Dockerfile to allow users to run a *Jupyter* instance with a *.NET* kernel without the need install the tools locally.
+This repository contains a Dockerfile to allow users to run a _Jupyter_ instance with a _.NET_ kernel without the need install the tools locally.
 
 ## Run .NET Interactive
 
@@ -18,7 +18,7 @@ docker run -it --rm -p 8888:8888 -v ${PWD}:/home/user/local secana/dotnet-intera
 docker run -it --rm -p 8888:8888 -v $pwd:/home/user/local secana/dotnet-interactive:latest
 ```
 
-This mounts your current working directory to the *local* folder in the *Jupyter* instance. The output will look like below. To open the notebook, click on the link in the last line.
+This mounts your current working directory to the _local_ folder in the _Jupyter_ instance. The output will look like below. To open the notebook, click on the link in the last line.
 
 ```bash
 ...
@@ -36,10 +36,10 @@ This mounts your current working directory to the *local* folder in the *Jupyter
 To build the container yourself, run:
 
 ```powershell
-docker build --squash -t jupyter .
+docker build -t jupyter .
 ```
 
-An image is build locally with the name *jupyter*.
+An image is build locally with the name _jupyter_.
 
 ### Push to Docker Hub
 
