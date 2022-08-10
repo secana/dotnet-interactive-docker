@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0.302
+FROM mcr.microsoft.com/dotnet/sdk:6.0.400
 
 RUN apt install -y --no-install-recommends wget && \
     apt autoremove -y && \
