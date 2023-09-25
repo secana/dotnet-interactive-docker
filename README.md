@@ -15,7 +15,7 @@ docker run -it --rm -p 8888:8888 -v ${PWD}:/home/user/local secana/dotnet-intera
 **Linux**:
 
 ```bash
-docker run -it --rm -p 8888:8888 -v $pwd:/home/user/local secana/dotnet-interactive:latest
+docker run -it --rm -p 8888:8888 -v $(pwd):/home/user/local secana/dotnet-interactive:latest
 ```
 
 This mounts your current working directory to the _local_ folder in the _Jupyter_ instance. The output will look like below. To open the notebook, click on the link in the last line.
