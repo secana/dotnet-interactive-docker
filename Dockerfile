@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0.400
+FROM mcr.microsoft.com/dotnet/sdk:8.0.401
 
 RUN apt install -y --no-install-recommends wget && \
     apt autoremove -y && \
