@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:10.0.102
+FROM mcr.microsoft.com/dotnet/sdk:10.0.103
 
 RUN apt install -y --no-install-recommends wget && \
     apt autoremove -y && \
